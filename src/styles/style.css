@@ -1,0 +1,127 @@
+@font-face {
+  font-family: FiraSans;
+  src: url(https://fonts.googleapis.com/css?family=Fira+Sans);
+}
+body {
+  --background-colour: #FFFFFF; /* White */
+  --text-colour: #000000; /* Black */
+  /* 
+   * This is the colour used for where I want to have the audience focus
+   *  * Logo
+	 *  * Menu Tabs
+	 *  * Call to Action Button
+	 *  * Highlight important information
+	 *  * Title and Headlines
+	 *  * Button 
+   */
+  --dominant-colour: #0A6B0F; /* Deep green */
+  /*
+   * This must be applied to 30% of the site, used to indicate secondary information.
+   */ 
+  --secondary-colour: #4F6650; /* Feldgrau */
+  /*
+   * Used to hightlight secondary information on the website, which should be applied to about 10% of the site.
+   *  This colour must heavily contrasted the dominant colours. 
+   */
+  --accent-colour: #6B0A66; 
+  --accent-text-colour: #FFFFFF;
+
+  background-color: var(--background-colour);
+  color: var(--text-colour);
+  font-family: FiraSans;
+}
+
+/*
+ * The top navigation bar
+ */
+.topnav {
+  display: flex;
+  flex-direction: row;
+  color: var(--dominant-colour);
+  margin: 0 -10px;
+}
+.nav-item {
+  color: var(--dominant-colour);
+  margin: 0 10px;
+}
+.active-link {
+  color: var(--accent-colour);
+}
+.push-right {
+  margin-left: auto;
+}
+/* 
+ * The header
+ */
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-style: dashed;
+  border-width: 2px;
+  height: 100vh;
+}
+.main-message {
+  color: var(--dominant-colour);
+}
+
+.secondary-message {
+  color: var(--dominant-colour);
+}
+
+.action-button {
+  background-color: var(--accent-colour);
+  color: var(--accent-text-colour);
+  font-family: FiraSans;
+}
+/* 
+ * The image slider 
+ */
+#image-slider {
+  position: relative;
+  display: flex;
+}
+
+.slider-panel {
+  position: absolute;
+  bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.slider-button {
+  border-radius: 50%;
+  border-width: 2px;
+  border-style: solid;
+  border-color: green;
+  width: 23px;
+  height: 23px;
+  background-color: transparent;
+  margin-left: 10px;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+a.slider-button:hover {
+  background-color:yellow!important;
+}
+
+.navigation-arrow {
+  color:antiquewhite!important;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+div.navigation-arrow:hover {
+  color:yellow!important;
+}
+
+.navigation-arrow-left {
+  margin-right: auto;
+}
+
+.navigation-arrow-right {
+  margin-left: auto;
+}
