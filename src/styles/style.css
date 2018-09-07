@@ -2,11 +2,16 @@
   font-family: FiraSans;
   src: url(https://fonts.googleapis.com/css?family=Fira+Sans);
 }
+html {
+  -moz-filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    filter: gray; /* IE6-9 */
+    filter: grayscale(100%);
+}
 body {
-  --background-colour: #FFFFFF; /* White */
-  --text-colour: #000000; /* Black */
-  /* 
-   * This is the colour used for where I want to have the audience focus
+  /*
+   * This is the dominant colour, which should be featured in large areas and in the icons. This is where I want to have to 
+   *  audience focus.
    *  * Logo
 	 *  * Menu Tabs
 	 *  * Call to Action Button
@@ -14,23 +19,40 @@ body {
 	 *  * Title and Headlines
 	 *  * Button 
    */
-  --dominant-colour: #0A6B0F; /* Deep green */
-  /*
-   * This must be applied to 30% of the site, used to indicate secondary information.
-   */ 
-  --secondary-colour: #4F6650; /* Feldgrau */
+  --dominant-colour: rgba(102, 238, 119, 1); /* #66EE77 */
   /*
    * Used to hightlight secondary information on the website, which should be applied to about 10% of the site.
-   *  This colour must heavily contrasted the dominant colours. 
+   *  This colour must heavily contrasted the dominant colours. This is used in very small area, for buttons and in the icons.
+   *  The less to use this colour, the more it will stand out.
+   *  --accent-colour: #6B0A66; 
    */
-  --accent-colour: #6B0A66; 
-  --accent-text-colour: #FFFFFF;
+  --accent-colour: rgba(255, 178, 109, 1); /* #FFB26D */
+  /*
+   * Neutral colours
+   */
+  --white-background: rgba(255, 255, 255, 1); /* #FFFFFF */
+  /* 
+   * This light background can be used to differentiate against the main background colour
+   */
+  --light-background: rgba(232, 249, 234, 1); /* #E8F9EA*/ 
+  --text-colour: rgba(67, 71, 67, 1); /* #434743*/ 
 
-  background-color: var(--background-colour);
+  background-color: var(--white-background);
   color: var(--text-colour);
   font-family: FiraSans;
 }
-
+/*
+ * The main header
+ */
+.main-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.header-logo {
+  border-right: 2em solid transparent;
+  background-clip: padding-box;
+}
 /*
  * The top navigation bar
  */
@@ -38,7 +60,6 @@ body {
   display: flex;
   flex-direction: row;
   color: var(--dominant-colour);
-  margin: 0 -10px;
 }
 .nav-item {
   color: var(--dominant-colour);
@@ -47,81 +68,38 @@ body {
 .active-link {
   color: var(--accent-colour);
 }
-.push-right {
-  margin-left: auto;
-}
+
 /* 
- * The header
+ * The main content
  */
 .main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-style: dashed;
-  border-width: 2px;
   height: 100vh;
+  align-items: center;
+  background-color: var(--dominant-colour);
 }
 .main-message {
-  color: var(--dominant-colour);
+  color: var(--text-colour);
+  font-size: 4vw;
+  border-style: dashed;
+  border-width: 2px;
 }
 
 .secondary-message {
-  color: var(--dominant-colour);
+  color: var(--text-colour);
+  border-style: dashed;
+  border-width: 2px;
 }
 
 .action-button {
   background-color: var(--accent-colour);
   color: var(--accent-text-colour);
   font-family: FiraSans;
+  color: var(--text-colour);
 }
-/* 
- * The image slider 
+/*
+ * The Features section
  */
-#image-slider {
-  position: relative;
-  display: flex;
-}
-
-.slider-panel {
-  position: absolute;
-  bottom: 5px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-}
-
-.slider-button {
-  border-radius: 50%;
-  border-width: 2px;
-  border-style: solid;
-  border-color: green;
-  width: 23px;
-  height: 23px;
-  background-color: transparent;
-  margin-left: 10px;
-  justify-content: space-around;
-  cursor: pointer;
-}
-
-a.slider-button:hover {
-  background-color:yellow!important;
-}
-
-.navigation-arrow {
-  color:antiquewhite!important;
-  font-size: 2em;
-  cursor: pointer;
-}
-
-div.navigation-arrow:hover {
-  color:yellow!important;
-}
-
-.navigation-arrow-left {
-  margin-right: auto;
-}
-
-.navigation-arrow-right {
-  margin-left: auto;
-}
+ 
